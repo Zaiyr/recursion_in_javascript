@@ -15,7 +15,27 @@
 // sumArray([2, 4, 6, 8]) => 20
 // sumArray([1, 2, 3, 4, 5]) => 15
 
-
+var total = 0;
+var repeat = 0;
 var sumArray = function(arr) {
   // Your code here
+
+  if (repeat != 0){
+    repeat = 0;
+    total = 0;
+  }
+
+  if(typeof arr !== 'object'){
+    return arr[0];
+  }
+
+  if(arr.length !== 0){
+    var int = arr.pop();
+    total += int;
+    sumArray(arr);
+  }
+  repeat = 1;
+  return total;
 };
+
+

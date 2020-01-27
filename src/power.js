@@ -12,6 +12,23 @@
 // power(5, 2) => 25
 // power(10, 3) => 1000
 
+var totalPower = 1;
+var repeatPower = 0;
+
 var power = function(base, exponent) {
   // Your code here
+
+  if(repeatPower !== 0){
+    totalPower = 1;
+    repeatPower = 0;
+  }
+
+  if(exponent !== 0){
+    totalPower *= base;
+    exponent--;
+    power(base, exponent)
+  }
+
+  repeatPower = 1;
+  return totalPower;
 };

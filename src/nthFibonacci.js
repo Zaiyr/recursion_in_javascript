@@ -16,7 +16,29 @@
 // nthFibonacci(4); // => 3
 // etc...
 
+var num1 = 0;
+var num2 = 1;
+var Fib = 0;
+var repeated = 0;
+
 var nthFibonacci = function(n) {
   // Your code here
+  if (repeated !==0){
+    num1 = 0;
+    num2 = 1;
+    repeated = 0;
+  }
+
+  if(n !== 0){
+    Fib = num1 + num2;
+    num1 = num2;
+    num2 = Fib;
+    n--;
+    console.log('num ', num1)
+    nthFibonacci(n)
+  }
+
+  repeated = 1;
+  return num1;
 };
 
